@@ -4,11 +4,18 @@ import javax.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "user")
+@Table(name = "music")
 @Data
-public class User {
+public class Music {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String name;
+
+    private String singer;
+    
+    private String content;
+
 }
