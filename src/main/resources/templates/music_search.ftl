@@ -22,27 +22,19 @@
     <div class="row">
       <div class="col-md-4">
         <ul class="nav nav-pills nav-stacked">
-          <li role="presentation" class="active"><a href="/music/list">列表</a></li>
+          <li role="presentation"><a href="/music/list">列表</a></li>
           <li role="presentation"><a href="/music/add">新增</a></li>
-          <li role="presentation"><a href="/user/search">搜索</a></li>
+          <li role="presentation" class="active"><a href="#">搜索</a></li>
         </ul>
       </div>
       <div class="col-md-8">      
-        <table class="table table-hover">
-          <thead>
-          <th>id</th>
-          <th>歌名</th>
-          <th>歌手</th>
-          <th>内容</th>
-          </thead>
-          <tbody>
-          <#list musics as music123>
-          <tr>
-          <td>${music123.id}</td><td>${music123.name}</td><td>${music123.singer}</td><td>${music123.content}</td>
-          </tr>
-          </#list>
-          </tbody>
-        </table>
+        <form action="/music/do_search" method="get">
+            <div class="form-group">
+                <label for="keyword">关键词</label>
+                <input type="text" class="form-control" id="keyword" name="keyword" placeholder="请输入搜索关键词">
+            </div>
+            <button type="submit" class="btn btn-default">确认</button>
+        </form>
       </div>
     </div>
   </div>

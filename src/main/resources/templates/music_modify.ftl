@@ -22,27 +22,29 @@
     <div class="row">
       <div class="col-md-4">
         <ul class="nav nav-pills nav-stacked">
-          <li role="presentation" class="active"><a href="/music/list">列表</a></li>
+          <li role="presentation"><a href="/music/list">列表</a></li>
           <li role="presentation"><a href="/music/add">新增</a></li>
-          <li role="presentation"><a href="/user/search">搜索</a></li>
+          <li role="presentation" class="active"><a href="#">修改</a></li>
+          <li role="presentation"><a href="/music/search">搜索</a></li>
         </ul>
       </div>
       <div class="col-md-8">      
-        <table class="table table-hover">
-          <thead>
-          <th>id</th>
-          <th>歌名</th>
-          <th>歌手</th>
-          <th>内容</th>
-          </thead>
-          <tbody>
-          <#list musics as music123>
-          <tr>
-          <td>${music123.id}</td><td>${music123.name}</td><td>${music123.singer}</td><td>${music123.content}</td>
-          </tr>
-          </#list>
-          </tbody>
-        </table>
+        <form action="/music/do_modify">
+            <input type="hidden"id="id" name="id" value="${music.id}">
+            <div class="form-group">
+                <label for="name">歌名</label>
+                <input type="text" class="form-control" id="name" name="name" value="${music.name}" placeholder="请输入歌名">
+            </div>
+            <div class="form-group">
+                <label for="singer">歌手</label>
+                <input type="text" class="form-control" id="singer" name="singer" value="${music.singer}" placeholder="请输入歌手名">
+            </div>
+             <div class="form-group">
+                <label for="content">内容</label>
+                <input type="text" class="form-control" id="content" name="content" value="${music.content}" placeholder="请输入内容">
+            </div>
+            <button type="submit" class="btn btn-default">确认</button>
+        </form>
       </div>
     </div>
   </div>
@@ -52,4 +54,4 @@
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
   </body>
-</html> 
+</html>
