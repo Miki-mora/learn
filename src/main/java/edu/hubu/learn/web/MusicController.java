@@ -67,7 +67,7 @@ public class MusicController {
     }
 
     @RequestMapping("/do_modify")
-    public ModelAndView doModifyUser(Music music) {
+    public ModelAndView doModifyMusic(Music music) {
         musicService.modifyMusic(music);
         ModelAndView mav = new ModelAndView("redirect:/music/list");
         return mav;

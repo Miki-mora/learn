@@ -43,9 +43,7 @@ public class MusicService {
         musicDao.deleteById(id);
     }
 
-    public void modifyUser(Music music) {
+    public void modifyMusic(Music music) {
         musicDao.save(music);
     }
-	public void modifyMusic(Music music) {
-	}
 }

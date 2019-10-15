@@ -24,7 +24,7 @@
         <ul class="nav nav-pills nav-stacked">
           <li role="presentation" class="active"><a href="/music/list">列表</a></li>
           <li role="presentation"><a href="/music/add">新增</a></li>
-          <li role="presentation"><a href="/user/search">搜索</a></li>
+          <li role="presentation"><a href="/music/search">搜索</a></li>
         </ul>
       </div>
       <div class="col-md-8">      
@@ -34,11 +34,15 @@
           <th>歌名</th>
           <th>歌手</th>
           <th>内容</th>
+          <th>删除</th>
+          <th>修改</th>
           </thead>
           <tbody>
           <#list musics as music123>
           <tr>
           <td>${music123.id}</td><td>${music123.name}</td><td>${music123.singer}</td><td>${music123.content}</td>
+          <td><a href="/music/delete/${music123.id}">删除</a></td>
+          <td><a href="/music/modify/${music123.id}">修改</a></td>
           </tr>
           </#list>
           </tbody>
