@@ -1,6 +1,11 @@
 package edu.hubu.learn.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
@@ -17,5 +22,8 @@ public class Music {
     private String singer;
     
     private String content;
+
+    @Column(name ="avatar_url")
+    private String avatar;
 
 }

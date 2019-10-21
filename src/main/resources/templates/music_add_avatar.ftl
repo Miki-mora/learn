@@ -22,34 +22,19 @@
     <div class="row">
       <div class="col-md-4">
         <ul class="nav nav-pills nav-stacked">
-          <li role="presentation" class="active"><a href="/music/list">列表</a></li>
-          <li role="presentation"><a href="/music/add">新增</a></li>
+          <li role="presentation"><a href="/music/list">列表</a></li>
+          <li role="presentation" class="active"><a href="/music/add">新增</a></li>
           <li role="presentation"><a href="/music/search">搜索</a></li>
         </ul>
       </div>
       <div class="col-md-8">      
-        <table class="table table-hover">
-          <thead>
-          <th>id</th>
-          <th>歌名</th>
-          <th>歌手</th>
-          <th>内容</th>
-          <th>头像</th>
-          <th>删除</th>
-          <th>修改</th>
-          <th>头像</th>
-          </thead>
-          <tbody>
-          <#list musics as music123>
-          <tr>
-          <td>${music123.id}</td><td>${music123.name}</td><td>${music123.singer}</td><td>${music123.content}</td><td>${music123.avatar}</td>
-          <td><a href="/music/delete/${music123.id}">删除</a></td>
-          <td><a href="/music/modify/${music123.id}">修改</a></td>
-          <td><a href="/music/add_avatar/${music123.id}">上传</a></td>
-          </tr>
-          </#list>
-          </tbody>
-        </table>
+        <form action="/music/do_add_avatar/${music.id}" enctype="multipart/form-data" method="post">
+            <div class="form-group">
+                <label for="avatar">头像图片</label>
+                <input type="file" class="form-control" id="avatar" name="avatar" placeholder="请选择图片">
+            </div>
+            <button type="submit" class="btn btn-default">确认</button>
+        </form>
       </div>
     </div>
   </div>

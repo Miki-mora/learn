@@ -23,5 +23,6 @@ CREATE TABLE `music`(
   `name` varchar(50) DEFAULT '' comment '歌名',
   `singer` varchar(50) DEFAULT '' comment '演唱者',
   `content` varchar(5000) DEFAULT '' comment '内容',
+  `avatar_url` varchar(200) DEFAULT '' comment '头像',
   PRIMARY KEY (`id`)
 );
